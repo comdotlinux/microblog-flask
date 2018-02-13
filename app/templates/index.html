@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-        <title>{{ title }} - Microblog</title>
-    {% else %}
-        <title>Welcome Microblog</title>
-    {% endif %}
+    <head>
+        <meta charset="UTF-8">
+        {% if title %}
+            <title>{{ title }} - Microblog</title>
+        {% else %}
+            <title>Welcome Microblog</title>
+        {% endif %}
 
-</head>
-<body>
-    <h1>Hello, {{ user.username }}</h1>
-</body>
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username}}: <b>{{post.body}}</b></p></div>
+        {% endfor %}
+    </body>
 </html>
